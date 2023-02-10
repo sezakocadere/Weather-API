@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @Validated
 @RestController
 @RequestMapping("weather")
@@ -18,8 +20,12 @@ public class WeatherController {
     // @Autowired
     private final WeatherService weatherService;
 
-    @GetMapping(value = "/{cityName}")
-    public Weather getWeather(@PathVariable String cityName) {
+    @GetMapping(value = "/current/{cityName}")
+    public Weather getCurrentWeather(@PathVariable String cityName) {
         return weatherService.getCurrentWeather(cityName);
+    }
+    @GetMapping(value = "/weekly/{cityName}")
+    public List<Weather> getWeeklyWeather(@PathVariable String cityName) {
+        return weatherService.getWeeklyWeather(cityName);
     }
 }

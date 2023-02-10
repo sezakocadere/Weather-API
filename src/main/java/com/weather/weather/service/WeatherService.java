@@ -5,10 +5,12 @@ import com.weather.weather.model.Weather;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface WeatherService {
 
     Weather getCurrentWeather(String cityName);
 
-    Weather getDailyWeather(Long cityId);
+    List<Weather> getWeeklyWeather(String cityName);
 }
