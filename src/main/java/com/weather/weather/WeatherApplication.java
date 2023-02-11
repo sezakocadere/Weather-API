@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients // Enable component scanning for interfaces that declare they are Feign clients
 public class WeatherApplication {
     public static void main(String[] args) {
         SpringApplication.run(WeatherApplication.class, args);

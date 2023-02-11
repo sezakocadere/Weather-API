@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface WeatherFeignClient {
     @GetMapping("/location/search/{cityName}")
     LocationsModel getLocationInfo(@PathVariable String cityName, @RequestHeader("Authorization") String bearer);
-
     // example request:https://pfa.foreca.com/api/v1/location/search/istanbul
+
     @GetMapping("/current/{cityId}")
     CurrentModel getCurrentWeatherInfo(@PathVariable Long cityId, @RequestHeader("Authorization") String bearer);
     // example request:https://pfa.foreca.com/api/v1/current/100745044

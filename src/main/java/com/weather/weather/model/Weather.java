@@ -12,4 +12,5 @@ public class Weather {
     private String symbolPhrase;
     private Integer temperature;
     private Integer feelsLikeTemp;
+    private String locationName;
 }
